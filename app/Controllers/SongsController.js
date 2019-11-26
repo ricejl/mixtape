@@ -16,7 +16,6 @@ function _drawPlaylist() {}
 export default class SongsController {
   constructor() {
     //TODO Don't forget to register your subscribers
-    console.log("hello from songs controller");
     store.subscribe("songs", _drawResults);
     _drawResults();
   }
@@ -36,7 +35,9 @@ export default class SongsController {
    * Takes in a song id and sends it to the service in order to add it to the users playlist
    * @param {string} id
    */
-  addSong(id) {}
+  addSong(id) {
+    event.preventDefault();
+  }
 
   /**
    * Takes in a song id to be removed from the users playlist and sends it to the server

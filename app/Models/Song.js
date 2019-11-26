@@ -12,15 +12,19 @@ export default class Song {
 
   get Template() {
     return `
-          <div class="media bg-white text-dark p-2">
-            <img src="//placehold.it/100x100" class="mr-3" alt="..." />
+          <div class="media bg-white text-dark p-2 mb-1">
+            <img src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body">
-              <h5 class="mt-0">Song Title</h5>
-              Artist
-            </div>
-          </div>
-        `;
+              <h5 class="mt-0">${this.title}</h5>
+              <p class="text-muted">${this.album}</p>
+              <p>${this.artist}</p>
+              <button class="btn btn-warning" type="button" onsubmit="addSong(${this._id})">Add to playlist</button>
+              </div>
+              </div>
+              `;
   }
+
+  // <audio src="${this.preview}" controls>
 
   get playlistTemplate() {
     return `
