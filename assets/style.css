@@ -4,3 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#album-art-style {
+  max-height: 150px;
+}

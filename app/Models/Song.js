@@ -13,14 +13,14 @@ export default class Song {
   get Template() {
     return `
           <div class="media bg-white text-dark p-2 mb-1">
-            <img src="${this.albumArt}" class="mr-3" alt="..." />
+            <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body">
               <h5 class="mt-0">${this.title}</h5>
               <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
-              <button class="btn btn-warning" type="button" onsubmit="addSong(${this._id})">Add to playlist</button>
-              </div>
-              </div>
+              <button class="btn btn-warning" type="button" onclick="app.songsController.addSong('${this._id}')">Add to playlist</button>
+            </div>
+          </div>
               `;
   }
 
@@ -28,7 +28,15 @@ export default class Song {
 
   get playlistTemplate() {
     return `
-
+          <div class="media bg-white text-dark p-2 mb-1">
+            <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
+            <div class="media-body">
+              <h5 class="mt-0">${this.title}</h5>
+              <p class="text-muted">${this.album}</p>
+              <p>${this.artist}</p>
+              <button class="btn btn-danger" type="button" onclick="app.songsController.removeSong('${this._id}')">Remove</button>
+            </div>
+          </div>
         `;
   }
 }

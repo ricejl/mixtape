@@ -38,7 +38,9 @@ class SongsService {
       .get()
       .then(res => {
         //TODO What are you going to do with this result
-        let results = res.results.map(rawData => new Song(rawData));
+        let results = res.data.data.map(rawData => new Song(rawData));
+        // store.State.playlist.push(results);
+        store.commit("playlist", results);
       })
       .catch(error => {
         throw new Error(error);
@@ -53,6 +55,10 @@ class SongsService {
   addSong(id) {
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
+    let selectedSong = store.State.songs.find(song => id == song._id);
+    console.log(selectedSong);
+    _sandBox.post("", selectedSong);
+    this.getMySongs();
   }
 
   /**
