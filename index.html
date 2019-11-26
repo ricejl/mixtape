@@ -9,21 +9,19 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>Music is Fun</title>
+    <title>mixtape</title>
   </head>
 
-  <body class="container-fluid">
-    <header class="row">
-      <div class="col-12 bannerStyle">
-        <p>Music is Fun</p>
-      </div>
+  <body class="container-fluid bg-img">
+    <header class="row text-white">
+      <div class="col-12 bannerStyle"></div>
       <div class="offset-8 col-4">
         <form onsubmit="app.songsController.search(event)">
           <input
             type="text"
             class="form-control"
             name="query"
-            placeholder="Search For Music"
+            placeholder="Search for music"
           />
           <button class="btn btn-success mt-1 form-control" type="submit">
             Search
@@ -32,16 +30,25 @@
       </div>
     </header>
 
-    <main class="row">
-      <div class="col-6">
-        <h3 class="text-center">Search Results</h3>
-        <div id="songs" class="col-12 m-0">
+    <main class="row text-white">
+      <div class="col-6 text-center">
+        <h3>Search Results</h3>
+        <div id="songs" class="m-0">
           <!-- template to generate -->
+          <div class="media bg-white text-dark p-2">
+            <img src="//placehold.it/100x100" class="mr-3" alt="..." />
+            <div class="media-body">
+              <h5 class="mt-0">Media heading</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+              scelerisque ante sollicitudin.
+            </div>
+          </div>
+          <!-- end songs template -->
         </div>
       </div>
       <div class="col-6">
         <h3 class="text-center">Playlist</h3>
-        <div class="col-12 m-0" id="playlist">
+        <div id="playlist">
           <!-- template for playlist -->
         </div>
       </div>

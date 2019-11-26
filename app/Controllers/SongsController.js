@@ -3,7 +3,12 @@ import SongService from "../Services/SongsService.js";
 
 //Private
 /**Draws the Search results to the page */
-function _drawResults() {}
+function _drawResults() {
+  let template = "";
+  let songs = store.State.songs;
+  songs.forEach(song => (template += song.Template));
+  document.getElementById("songs").innerHTML = template;
+}
 /**Draws the Users saved songs to the page */
 function _drawPlaylist() {}
 
@@ -11,6 +16,9 @@ function _drawPlaylist() {}
 export default class SongsController {
   constructor() {
     //TODO Don't forget to register your subscribers
+    console.log("hello from songs controller");
+    store.subscribe("songs", _drawResults);
+    _drawResults();
   }
 
   /**Takes in the form submission event and sends the query to the service */

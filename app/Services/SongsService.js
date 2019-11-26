@@ -3,8 +3,7 @@ import store from "../store.js";
 
 // @ts-ignore
 let _sandBox = axios.create({
-  //TODO Change YOURNAME to your actual name
-  baseURL: "//bcw-sandbox.herokuapp.com/api/YOURNAME/songs"
+  baseURL: "//bcw-sandbox.herokuapp.com/api/jenny/songs"
 });
 
 class SongsService {

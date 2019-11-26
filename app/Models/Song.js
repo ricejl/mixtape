@@ -12,7 +12,13 @@ export default class Song {
 
   get Template() {
     return `
-
+          <div class="media bg-white text-dark p-2">
+            <img src="//placehold.it/100x100" class="mr-3" alt="..." />
+            <div class="media-body">
+              <h5 class="mt-0">Song Title</h5>
+              Artist
+            </div>
+          </div>
         `;
   }
 

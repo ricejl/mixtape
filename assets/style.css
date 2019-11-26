@@ -1,0 +1,6 @@
+.bg-img {
+  background-image: url("https://images.unsplash.com/photo-1567637825410-e1e2f8582f7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
