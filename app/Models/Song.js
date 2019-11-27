@@ -12,7 +12,7 @@ export default class Song {
 
   get Template() {
     return `
-          <div class="media bg-white text-dark p-2 mb-1">
+          <div class="media border p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body pt-2">
               <button
@@ -34,7 +34,7 @@ export default class Song {
 
   get playlistTemplate() {
     return `
-          <div class="media bg-white text-dark p-2 mb-1">
+          <div class="media border p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body pt-2">
               <button

@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
@@ -18,10 +22,10 @@
     <title>mixtape</title>
   </head>
 
-  <body class="container-fluid bg-img">
-    <header class="row text-white">
+  <body class="container-fluid">
+    <header class="row">
       <div class="col-12">
-        <h1>mixtape</h1>
+        <h1 id="mixtape">mixtape</h1>
       </div>
       <div class="offset-8 col-4">
         <form onsubmit="app.songsController.search(event)">
@@ -40,14 +44,16 @@
       </div>
     </header>
 
-    <main class="row text-white">
+    <main class="row">
       <div class="col-4 text-center">
         <h3>Search Results</h3>
         <div id="songs" class="m-0">
           <!-- template to generate -->
         </div>
       </div>
-      <div class="col-4">Currently playing</div>
+      <div class="col-4 bg-img text-white text-center">
+        <h3>Currently playing</h3>
+      </div>
       <div class="col-4">
         <h3 class="text-center">Playlist</h3>
         <div id="playlist">
@@ -60,7 +66,7 @@
       <div class="row">
         <div class="col-4">
           <h3>Search result</h3>
-          <div class="media bg-white text-dark p-2 mb-1">
+          <div class="media border p-2 mb-1">
             <img
               id="album-art-style"
               src="//placehold.it/120x120"
@@ -80,7 +86,7 @@
               <p>${this.artist}</p>
             </div>
           </div>
-          <div class="media bg-white text-dark p-2 mb-1">
+          <div class="media border p-2 mb-1">
             <img
               id="album-art-style"
               src="//placehold.it/120x120"
