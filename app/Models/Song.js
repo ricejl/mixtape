@@ -14,7 +14,7 @@ export default class Song {
     return `
           <div class="media bg-white text-dark p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
-            <div class="media-body">
+            <div class="media-body pt-2">
               <h5 class="mt-0">${this.title}</h5>
               <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
@@ -30,7 +30,7 @@ export default class Song {
     return `
           <div class="media bg-white text-dark p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
-            <div class="media-body">
+            <div class="media-body pt-2">
               <h5 class="mt-0">${this.title}</h5>
               <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>

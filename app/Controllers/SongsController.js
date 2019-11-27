@@ -43,7 +43,6 @@ export default class SongsController {
    * @param {string} id
    */
   addSong(id) {
-    event.preventDefault();
     SongService.addSong(id);
   }
 
@@ -51,5 +50,7 @@ export default class SongsController {
    * Takes in a song id to be removed from the users playlist and sends it to the server
    * @param {string} id
    */
-  removeSong(id) {}
+  removeSong(id) {
+    SongService.removeSong(id);
+  }
 }

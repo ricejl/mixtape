@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
+      integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
@@ -19,21 +25,23 @@
       </div>
       <div class="offset-8 col-4">
         <form onsubmit="app.songsController.search(event)">
-          <input
-            type="text"
-            class="form-control"
-            name="query"
-            placeholder="Search for music"
-          />
-          <button class="btn btn-success mt-1 form-control" type="submit">
-            Search
-          </button>
+          <div class="d-flex align-items-center">
+            <input
+              type="text"
+              class="form-control pr-5"
+              name="query"
+              placeholder="Search for music"
+            />
+            <button class="btn-blank" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </form>
       </div>
     </header>
 
     <main class="row text-white">
-      <div class="col-6 text-center">
+      <div class="col-4 text-center">
         <h3>Search Results</h3>
         <div id="songs" class="m-0">
           <!-- template to generate -->
@@ -46,6 +54,36 @@
         </div>
       </div>
     </main>
+
+    <footer>
+      <div class="row">
+        <div class="col-4">
+          <h3>Search result</h3>
+          <div class="media bg-white text-dark p-2 mb-1">
+            <img
+              id="album-art-style"
+              src="//placehold.it/120x120"
+              class="mr-3"
+              alt="..."
+            />
+            <div class="media-body pt-2">
+              <button
+                class="btn-blank"
+                type="button"
+                onclick="app.songsController.addSong('${this._id}')"
+              >
+                <i class="far fa-2x fa-plus-square"></i>
+              </button>
+              <h5 class="mt-0">${this.title}</h5>
+              <p class="text-muted">${this.album}</p>
+              <p>${this.artist}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+      </div>
+    </footer>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"

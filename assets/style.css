@@ -6,5 +6,18 @@
 }
 
 #album-art-style {
-  max-height: 150px;
+  max-height: 120px;
+}
+
+.btn-blank {
+  position: absolute;
+  right: 1.5em;
+  background: transparent;
+  border: none;
+}
+
+.media-body > .btn-blank {
+  position: absolute;
+  right: 1em;
+  top: 2.8em;
 }

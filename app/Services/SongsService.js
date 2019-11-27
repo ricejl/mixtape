@@ -57,8 +57,14 @@ class SongsService {
     //TODO After posting it what should you do?
     let selectedSong = store.State.songs.find(song => id == song._id);
     console.log(selectedSong);
-    _sandBox.post("", selectedSong);
-    this.getMySongs();
+    _sandBox
+      .post("", selectedSong)
+      .then(res => {
+        this.getMySongs();
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   /**
@@ -68,6 +74,15 @@ class SongsService {
    */
   removeSong(id) {
     //TODO Send the id to be deleted from the server then update the store
+    _sandBox
+      .delete(id)
+      .then(res => {
+        console.log(res);
+        this.getMySongs();
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 }
 
