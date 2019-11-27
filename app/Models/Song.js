@@ -15,10 +15,16 @@ export default class Song {
           <div class="media bg-white text-dark p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body pt-2">
+              <button
+                class="btn-blank-song"
+                type="button"
+                onclick="app.songsController.addSong('${this._id}')"
+              >
+                <i class="far fa-plus-square"></i>
+              </button>
               <h5 class="mt-0">${this.title}</h5>
               <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
-              <button class="btn btn-warning" type="button" onclick="app.songsController.addSong('${this._id}')">Add to playlist</button>
             </div>
           </div>
               `;
@@ -31,10 +37,16 @@ export default class Song {
           <div class="media bg-white text-dark p-2 mb-1">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
             <div class="media-body pt-2">
+              <button
+                class="btn-blank-song"
+                type="button"
+                onclick="app.songsController.removeSong('${this._id}')"
+              >
+                <i class="fas fa-times"></i>
+              </button>
               <h5 class="mt-0">${this.title}</h5>
               <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
-              <button class="btn btn-danger" type="button" onclick="app.songsController.removeSong('${this._id}')">Remove</button>
             </div>
           </div>
         `;

@@ -11,13 +11,19 @@
 
 .btn-blank {
   position: absolute;
-  right: 1.5em;
   background: transparent;
   border: none;
+  right: 1.5em;
 }
 
-.media-body > .btn-blank {
+.btn-blank-song {
   position: absolute;
-  right: 1em;
-  top: 2.8em;
+  background: transparent;
+  border: none;
+  right: -0.5em;
+  top: -0.5em;
+}
+
+.media-body {
+  position: relative;
 }
