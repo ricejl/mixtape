@@ -23,12 +23,17 @@
   </head>
 
   <body class="container-fluid">
-    <header class="row">
+    <header class="row pt-2 pb-3">
       <div class="col-12">
         <h1 id="mixtape">mixtape</h1>
+        <hr />
       </div>
-      <div class="offset-8 col-4">
-        <form onsubmit="app.songsController.search(event)">
+      <div class="col-4"></div>
+    </header>
+
+    <main class="row">
+      <div class="col-4">
+        <form class="pt-4 pb-2" onsubmit="app.songsController.search(event)">
           <div class="d-flex align-items-center">
             <input
               type="text"
@@ -41,13 +46,8 @@
             </button>
           </div>
         </form>
-      </div>
-    </header>
 
-    <main class="row">
-      <div class="col-4 text-center">
-        <h3>Search Results</h3>
-        <div id="songs" class="m-0">
+        <div id="songs" class="scroll">
           <!-- template to generate -->
         </div>
       </div>
@@ -56,7 +56,7 @@
       </div>
       <div class="col-4">
         <h3 class="text-center">Playlist</h3>
-        <div id="playlist">
+        <div class="scroll" id="playlist">
           <!-- template for playlist -->
         </div>
       </div>

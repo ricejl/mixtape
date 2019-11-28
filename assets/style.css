@@ -7,7 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 85vh;
 }
 
 #album-art-style {
@@ -36,4 +36,14 @@
 
 .media-body > h5 {
   font-size: 18px;
+}
+
+.scroll {
+  overflow-y: scroll;
+  /* display: none; */
+  height: 80vh;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }
