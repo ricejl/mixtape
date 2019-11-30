@@ -13,7 +13,7 @@ export default class Song {
   get Template() {
     return `
           <div class="media border p-2 mb-1">
-            <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
+            <img id="album-art-style" src="${this.albumArt}" class="mr-3 img-fluid" alt="..." />
             <div class="media-body pt-2">
               <button
                 class="btn-blank-song"
@@ -23,7 +23,6 @@ export default class Song {
                 <i class="far fa-plus-square"></i>
               </button>
               <h5 class="mt-0">${this.title}</h5>
-              <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
             </div>
           </div>
@@ -31,11 +30,12 @@ export default class Song {
   }
 
   // <audio src="${this.preview}" controls>
+  // <p class="text-muted">${this.album}</p>
 
   get playlistTemplate() {
     return `
           <div class="media border p-2 mb-1">
-            <img id="album-art-style" src="${this.albumArt}" class="mr-3" alt="..." />
+            <img id="album-art-style" src="${this.albumArt}" class="mr-3 img-fluid" alt="..." />
             <div class="media-body pt-2">
               <button
                 class="btn-blank-song"
@@ -45,7 +45,6 @@ export default class Song {
                 <i class="fas fa-times"></i>
               </button>
               <h5 class="mt-0">${this.title}</h5>
-              <p class="text-muted">${this.album}</p>
               <p>${this.artist}</p>
             </div>
           </div>

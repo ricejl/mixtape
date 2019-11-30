@@ -14,6 +14,12 @@
   max-height: 120px;
 }
 
+@media only screen and (max-width: 576px) {
+  #album-art-style {
+    max-height: 100px;
+  }
+}
+
 .btn-blank {
   position: absolute;
   background: transparent;
@@ -38,12 +44,25 @@
   font-size: 18px;
 }
 
-.scroll {
-  overflow-y: scroll;
-  /* display: none; */
-  height: 80vh;
+.media {
+  min-width: 225px;
+  max-width: 420px;
 }
 
-.scroll::-webkit-scrollbar {
-  display: none;
+@media only screen and (min-width: 992px) {
+  .scroll {
+    overflow-y: scroll;
+    /* display: none; */
+    height: 80vh;
+  }
+
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .scroll {
+    overflow-x: scroll;
+  }
 }

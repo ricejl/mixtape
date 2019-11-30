@@ -32,7 +32,7 @@
     </header>
 
     <main class="row">
-      <div class="col-4">
+      <div class="col-12 col-lg-3">
         <form class="pt-4 pb-2" onsubmit="app.songsController.search(event)">
           <div class="d-flex align-items-center">
             <input
@@ -46,64 +46,71 @@
             </button>
           </div>
         </form>
-
         <div id="songs" class="scroll">
           <!-- template to generate -->
         </div>
       </div>
-      <div class="col-4 bg-img text-white text-center">
-        <h3>Currently playing</h3>
-      </div>
-      <div class="col-4">
-        <h3 class="text-center">Playlist</h3>
+      <div class="col-12 col-lg-3 order-lg-2">
+        <h3 class="text-center">awesome mix</h3>
         <div class="scroll" id="playlist">
           <!-- template for playlist -->
         </div>
+      </div>
+      <div class="col-12 col-lg-6 order-lg-1 bg-img text-white text-center">
+        <h3>Currently playing</h3>
       </div>
     </main>
 
     <footer>
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-lg-3">
           <h3>Search result</h3>
-          <div class="media border p-2 mb-1">
-            <img
-              id="album-art-style"
-              src="//placehold.it/120x120"
-              class="mr-3"
-              alt="..."
-            />
-            <div class="media-body pt-2">
-              <button
-                class="btn-blank-song"
-                type="button"
-                onclick="app.songsController.addSong('${this._id}')"
-              >
-                <i class="far fa-plus-square"></i>
-              </button>
-              <h5 class="mt-0">${this.title}</h5>
-              <p class="text-muted">${this.album}</p>
-              <p>${this.artist}</p>
+          <!-- FIXME row-cols not working -->
+          <div class="row row-cols-5 row-cols-lg-1">
+            <div class="col">
+              <div class="media border p-2 mb-1">
+                <img
+                  id="album-art-style"
+                  src="//placehold.it/120x120"
+                  class="mr-3"
+                  alt="..."
+                />
+                <div class="media-body pt-2">
+                  <button
+                    class="btn-blank-song"
+                    type="button"
+                    onclick="app.songsController.addSong('${this._id}')"
+                  >
+                    <i class="far fa-plus-square"></i>
+                  </button>
+                  <h5 class="mt-0">${this.title}</h5>
+                  <p class="text-muted">${this.album}</p>
+                  <p>${this.artist}</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="media border p-2 mb-1">
-            <img
-              id="album-art-style"
-              src="//placehold.it/120x120"
-              class="mr-3"
-              alt="..."
-            />
-            <div class="media-body pt-2">
-              <button
-                class="btn-blank-song"
-                type="button"
-                onclick="app.songsController.addSong('${this._id}')"
-              >
-                <i class="far fa-plus-square"></i>
-              </button>
-              <h5 class="mt-0">${this.title}</h5>
-              <p class="text-muted">${this.album}</p>
-              <p>${this.artist}</p>
+
+            <div class="col">
+              <div class="media border p-2 mb-1">
+                <img
+                  id="album-art-style"
+                  src="//placehold.it/120x120"
+                  class="mr-3"
+                  alt="..."
+                />
+                <div class="media-body pt-2">
+                  <button
+                    class="btn-blank-song"
+                    type="button"
+                    onclick="app.songsController.addSong('${this._id}')"
+                  >
+                    <i class="far fa-plus-square"></i>
+                  </button>
+                  <h5 class="mt-0">${this.title}</h5>
+                  <p class="text-muted">${this.album}</p>
+                  <p>${this.artist}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
