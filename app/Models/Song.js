@@ -13,7 +13,9 @@ export default class Song {
   get Template() {
     return `
           <div class="media border p-2 mb-1">
+            <button class="btn-transparent" onclick="app.songsController.previewSong('${this._id}')">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3 img-fluid" alt="..." />
+            </button>
             <div class="media-body pt-2">
               <button
                 class="btn-blank-song"
@@ -29,25 +31,32 @@ export default class Song {
               `;
   }
 
-  // <audio src="${this.preview}" controls>
-  // <p class="text-muted">${this.album}</p>
-
   get playlistTemplate() {
     return `
           <div class="media border p-2 mb-1">
+            <button class="btn-transparent" onclick="app.songsController.previewSong('${this._id}')">
             <img id="album-art-style" src="${this.albumArt}" class="mr-3 img-fluid" alt="..." />
+            </button>
             <div class="media-body pt-2">
               <button
                 class="btn-blank-song"
                 type="button"
                 onclick="app.songsController.removeSong('${this._id}')"
-              >
+                >
                 <i class="fas fa-times"></i>
-              </button>
+                </button>
               <h5 class="mt-0">${this.title}</h5>
               <p>${this.artist}</p>
-            </div>
+              </div>
           </div>
-        `;
+          `;
+  }
+  get previewTemplate() {
+    return `
+    <audio src="${this.preview}" controls></audio>
+    <h5 class="mt-0">${this.title}</h5>
+    <p>${this.artist}</p>
+    <p class="text-muted">${this.album}</p>
+    `;
   }
 }

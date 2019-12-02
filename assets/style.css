@@ -35,6 +35,12 @@
   top: -0.5em;
 }
 
+.btn-transparent {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
 .media-body {
   position: relative;
   font-size: 15px;

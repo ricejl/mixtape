@@ -56,11 +56,15 @@ class SongsService {
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
     let selectedSong = store.State.songs.find(song => id == song._id);
-    console.log(selectedSong);
     _sandBox
       .post("", selectedSong)
       .then(res => {
-        this.getMySongs();
+        // this.getMySongs();
+        // NOTE immutable way
+        let newSong = new Song(res.data.data);
+        let playlist = [...store.State.playlist, newSong];
+        // store.State.playlist.push(newSong) NOTE data destructive way
+        store.commit("playlist", playlist);
       })
       .catch(err => {
         console.error(err);
@@ -83,6 +87,14 @@ class SongsService {
       .catch(err => {
         console.error(err);
       });
+  }
+
+  // NOTE this is not performant -- searches through both songs and playlist arrays
+  previewSong(id) {
+    let selectedSong =
+      store.State.songs.find(song => id == song._id) ||
+      store.State.playlist.find(song => song._id == id);
+    store.commit("currentSong", selectedSong);
   }
 }
 

@@ -6,7 +6,8 @@ let _state = {
   songs: [],
   /**Collection of songs from the users Playlist
    * @type {Song[]} */
-  playlist: []
+  playlist: [],
+  currentSong: {}
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -14,7 +15,8 @@ let _state = {
  */
 let _listeners = {
   songs: [],
-  playlist: []
+  playlist: [],
+  currentSong: []
 };
 
 //NOTE You should not need to change the code from this point down

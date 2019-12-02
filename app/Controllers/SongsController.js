@@ -9,6 +9,7 @@ function _drawResults() {
   songs.forEach(song => (template += song.Template));
   document.getElementById("songs").innerHTML = template;
 }
+
 /**Draws the Users saved songs to the page */
 function _drawPlaylist() {
   let template = "";
@@ -17,20 +18,31 @@ function _drawPlaylist() {
   document.getElementById("playlist").innerHTML = template;
 }
 
+function _drawPreview() {
+  let template = store.State.currentSong.previewTemplate;
+  // songs.forEach(song => (template = song.previewTemplate));
+  // template += songs[0].previewTemplate;
+  document.getElementById("song-preview").innerHTML = template;
+}
+
 //Public
 export default class SongsController {
   constructor() {
     //TODO Don't forget to register your subscribers
+    // NOTE these are subscribing to store to know when changes are made to songs or playlist
     store.subscribe("songs", _drawResults);
     store.subscribe("playlist", _drawPlaylist);
+    store.subscribe("currentSong", _drawPreview);
     _drawResults();
     _drawPlaylist();
+    _drawPreview();
   }
 
   /**Takes in the form submission event and sends the query to the service */
   search(e) {
     //NOTE You dont need to change this method
     e.preventDefault();
+    // TODO add in function to load page / spinner and call it here
     try {
       SongService.getMusicByQuery(e.target.query.value);
     } catch (error) {
@@ -52,5 +64,9 @@ export default class SongsController {
    */
   removeSong(id) {
     SongService.removeSong(id);
+  }
+
+  previewSong(id) {
+    SongService.previewSong(id);
   }
 }
